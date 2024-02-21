@@ -1,12 +1,34 @@
 #include <stdio.h>
 
 double fn(double x) {
-    return x*x*x - 10*x*x - 15*x - 20;
+    return 4*x*x*x - 10*x*x - 15*x - 20;
 }
+int find_max(){
+	double rand=1;
+	while(fn(rand)<0){
+		
+			rand=rand+rand*2;
+		
+		
+	}
+	return rand;
+  }
+  int find_min(){
+	double rand=100;
+	while(fn(rand)>0){
+		
+			rand=rand-(rand/2);
+		
+		
+	}
+	return rand;
+  }
 
-int find_first_positive_n() {
-    double low = 0, high = 50;  // Assuming the range for n is [0, 10]
+int find_first_positive_n(double low , double high ) {
+    
+  
 
+	
     while (high - low > 1e-6) {
         double mid = (low + high) / 2;
 
@@ -20,9 +42,12 @@ int find_first_positive_n() {
 }
 
 int main() {
-    int result = find_first_positive_n();
-
-    printf("The smallest positive n for which f(n) becomes positive is: %d\n", result);
-
+   // int result = find_first_positive_n();
+	int result=find_min();
+	int result1=find_max();
+    printf("Min: %d\n", result);
+    printf("Max %d\n", result1);
+	int ans=find_first_positive_n(result,result1);
+	printf("%d\n",ans);
     return 0;
 }
