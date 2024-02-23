@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 double fn(double x) {
-    return 4*x*x*x - 10*x*x - 15*x - 20;
+    return x*x*x - 10*x*x - 15*x - 20;
 }
 int find_max(){
 	double rand=1;
