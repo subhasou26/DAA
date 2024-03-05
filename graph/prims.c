@@ -64,7 +64,7 @@ void primMST(int graph[V][V]) {
 
         // Update key value and parent index of the adjacent vertices of the picked vertex
         for (int v = 0; v < V; v++) {
-            if (graph[u][v] && mstSet[v] == 0 && graph[u][v] < key[v]) { // non visited and minimum weight 
+            if (graph[u][v] && mstSet[v] == 0 && graph[u][v] < key[v]) { // non visited and minimum weight updated in key[]
                 parent[v] = u;
                 key[v] = graph[u][v];
             }
