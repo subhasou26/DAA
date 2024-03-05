@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-#define V 5 // Number of vertices in the graph
+#define V 6 // Number of vertices in the graph
 #define MAX_VERTICES 100
 int adjacencyMatrix[MAX_VERTICES][MAX_VERTICES];
 
@@ -76,7 +76,7 @@ void primMST(int graph[V][V]) {
 }
 
 int main() {
-    int graph[5][5] ;
+    int graph[6][6] ;
     //     int vertices =sizeof(graph)/sizeof(graph[0]);
     //     printf("%d",vertices);
     // primMST(graph);
