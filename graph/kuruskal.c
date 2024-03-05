@@ -111,9 +111,9 @@ void kruskal(int V, int graph[V][V]) {
 }
 
 int main() {
-    int V = 5;
+   
 
-    int graph[5][5] ;
+    
     //     int vertices =sizeof(graph)/sizeof(graph[0]);
     //     printf("%d",vertices);
     // primMST(graph);
@@ -138,7 +138,7 @@ int main() {
         addEdgeMatrix(from, to, weight);
        
     }
-
+int graph[vertices][vertices] ;
     printf("\nAdjacency Matrix:\n");
     displayMatrix(vertices);
      for (int i = 0; i < vertices; i++) {
@@ -147,7 +147,7 @@ int main() {
         }
        
     }
-    kruskal(V, graph);
+    kruskal(vertices, graph);
 
     return 0;
 }
