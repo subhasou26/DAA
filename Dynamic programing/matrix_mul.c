@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <limits.h>
 
-#define MAX_SIZE 102
-#define MOD 1e9+7
-int dp[MAX_SIZE][MAX_SIZE];
-int a[MAX_SIZE];
+#define MAX_SIZE 100
+
 // Function to find the minimum number of multiplications needed to multiply matrices
-/*int matrixChainMultiplication(int dims[], int n) {
+
+
+// Function to find the minimum number of multiplications needed to multiply matrices
+// dynamic programin function
+int matrixChainMultiplication(int dims[], int n) {
     int dp[MAX_SIZE][MAX_SIZE]; // Dynamic programming table
 
     // Initialize the table with -1
@@ -21,7 +23,7 @@ int a[MAX_SIZE];
         dp[i][i] = 0;
     }
 
-    // Fill the table in a bottom-up manner digonaly
+    // Fill the table in a bottom-up manner
     for (int len = 2; len <= n; len++) {
         for (int i = 1; i <= n - len + 1; i++) {
             int j = i + len - 1;
@@ -37,11 +39,11 @@ int a[MAX_SIZE];
     }
 
     return dp[1][n];
-}*/
+}
 
 // dynamic prograin approach
 
-int mcm(int i,int j){
+/*int mcm(int i,int j){
     if(i==j){
         return 0;
     }
@@ -57,20 +59,20 @@ int mcm(int i,int j){
         }
     }
     return dp[i][j];
-}
+}*/
 
 int main() {
      // Example dimensions, change as needed
      // Number of matrices
 
-   // int minMultiplications = matrixChainMultiplication(dims, n);
-    int n;
+  
+   int n;
     scanf("%d",&n);
-
+    int arr[n];
     for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
+        scanf("%d",&arr[i]);
     }
-
+/*
    for(int i=0;i<MAX_SIZE;i++){
     for( int j=0;j<MAX_SIZE;j++){
         dp[i][j]=-1; // initilizing dp array with -1
@@ -78,8 +80,10 @@ int main() {
    }
 
    int ans=mcm(1,n-1);
-    
-   // printf("Minimum number of multiplications: %d\n", minMultiplications);
-    printf("The ans is %d",ans);
+    */
+   
+     int minMultiplications = matrixChainMultiplication(arr, n-1);
+    printf("Minimum number of multiplications: %d\n", minMultiplications);
+   // printf("The ans is %d",ans);
     return 0;
 }
